@@ -1,0 +1,505 @@
+
+/* =========================================
+   WISESHELF AI - REFERENCE BOOK LIBRARY
+========================================= */
+
+.referencebook-page {
+    width: 100%;
+    max-width: 100%;
+    min-width: 0;
+    padding: 22px;
+    color: #20243a;
+}
+
+.referencebook-hero {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+    padding: 28px;
+    border-radius: 18px;
+    background: linear-gradient(120deg, #343b72, #6655b8);
+    color: white;
+    margin-bottom: 22px;
+}
+
+.referencebook-label {
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 1.5px;
+    opacity: 0.8;
+}
+
+.referencebook-hero h1 {
+    font-size: 29px;
+    margin: 10px 0;
+}
+
+.referencebook-hero p {
+    font-size: 14px;
+    line-height: 1.6;
+    max-width: 560px;
+    opacity: 0.9;
+}
+
+.referencebook-hero-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 85px;
+    height: 85px;
+    border-radius: 20px;
+    background: rgba(255,255,255,0.15);
+}
+
+.referencebook-stats {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 16px;
+    margin-bottom: 22px;
+}
+
+.referencebook-stat-card {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    padding: 19px;
+    border-radius: 14px;
+    background: white;
+    border: 1px solid #e9eaf1;
+}
+
+.referencebook-stat-card > svg {
+    color: #6757bd;
+}
+
+.referencebook-stat-card h2 {
+    font-size: 21px;
+    margin: 0 0 4px;
+}
+
+.referencebook-stat-card p {
+    color: #777d91;
+    font-size: 12px;
+    margin: 0;
+}
+
+.referencebook-section {
+    background: white;
+    border: 1px solid #e9eaf1;
+    border-radius: 16px;
+    padding: 22px;
+    margin-bottom: 22px;
+    min-width: 0;
+}
+
+.referencebook-section-heading {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 20px;
+}
+
+.referencebook-section-heading h2 {
+    display: flex;
+    align-items: center;
+    gap: 9px;
+    font-size: 18px;
+    margin: 0 0 7px;
+}
+
+.referencebook-section-heading h2 svg {
+    color: #6859bd;
+}
+
+.referencebook-section-heading p {
+    color: #85899a;
+    font-size: 13px;
+    margin: 0;
+}
+
+.referencebook-section form > label,
+.referencebook-form-grid label {
+    display: block;
+    font-size: 13px;
+    font-weight: 600;
+    margin-bottom: 8px;
+}
+
+#reference-book-files {
+    display: block;
+    width: 100%;
+    padding: 14px;
+    margin-bottom: 18px;
+    border: 1px dashed #aaa5d5;
+    border-radius: 10px;
+    background: #faf9ff;
+    cursor: pointer;
+}
+
+.referencebook-file-info {
+    color: #6556b5;
+    font-size: 13px;
+    margin: -8px 0 16px;
+}
+
+.referencebook-form-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 17px;
+}
+
+.referencebook-form-grid input,
+.referencebook-search input {
+    width: 100%;
+    min-width: 0;
+    padding: 12px 13px;
+    border: 1px solid #e1e3eb;
+    border-radius: 9px;
+    outline: none;
+    background: white;
+    color: #20243a;
+    font-size: 13px;
+}
+
+.referencebook-form-grid input:focus,
+.referencebook-search input:focus {
+    border-color: #7767ca;
+    box-shadow: 0 0 0 3px rgba(119,103,202,0.10);
+}
+
+.referencebook-form-grid input:disabled {
+    background: #f3f3f6;
+    cursor: not-allowed;
+}
+
+.referencebook-upload-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 9px;
+    margin-top: 20px;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 9px;
+    background: #6657b8;
+    color: white;
+    font-size: 13px;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+.referencebook-upload-btn:hover {
+    background: #51439e;
+}
+
+.referencebook-upload-btn:disabled {
+    opacity: 0.65;
+    cursor: not-allowed;
+}
+
+.referencebook-error,
+.referencebook-success {
+    margin-top: 15px;
+    font-size: 13px;
+}
+
+.referencebook-error {
+    color: #d13b49;
+}
+
+.referencebook-success {
+    color: #16844a;
+}
+
+.referencebook-search {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 0 12px;
+    border: 1px solid #e1e3eb;
+    border-radius: 10px;
+    margin-bottom: 18px;
+}
+
+.referencebook-search svg {
+    color: #888da0;
+    flex-shrink: 0;
+}
+
+.referencebook-search input {
+    border: none;
+    box-shadow: none !important;
+}
+
+.referencebook-book-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 14px;
+}
+
+.referencebook-book-card {
+    display: flex;
+    align-items: flex-start;
+    gap: 13px;
+    min-width: 0;
+    padding: 17px;
+    border: 1px solid #e9eaf1;
+    border-radius: 12px;
+    background: #fff;
+}
+
+.referencebook-book-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    width: 43px;
+    height: 43px;
+    border-radius: 10px;
+    background: #f0edff;
+    color: #6959bb;
+}
+
+.referencebook-book-details {
+    flex: 1;
+    min-width: 0;
+}
+
+.referencebook-book-details h3 {
+    font-size: 14px;
+    margin: 2px 0 7px;
+    overflow-wrap: anywhere;
+}
+
+.referencebook-book-details p,
+.referencebook-book-details span,
+.referencebook-book-details small {
+    display: block;
+    color: #85899a;
+    font-size: 12px;
+    margin: 5px 0;
+    overflow-wrap: anywhere;
+}
+
+.referencebook-book-details span {
+    color: #6657b8;
+    font-weight: 600;
+}
+
+.referencebook-delete-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    width: 34px;
+    height: 34px;
+    border: none;
+    border-radius: 8px;
+    background: #fff0f0;
+    color: #d84a54;
+    cursor: pointer;
+}
+
+.referencebook-delete-btn:hover {
+    background: #ffe0e0;
+}
+
+.referencebook-empty {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 35px 15px;
+    text-align: center;
+    color: #888da0;
+}
+
+.referencebook-empty h3 {
+    color: #34394d;
+    font-size: 16px;
+    margin: 13px 0 5px;
+}
+
+.referencebook-empty p {
+    font-size: 13px;
+}
+
+.referencebook-spin {
+    animation: referencebook-rotate 1s linear infinite;
+}
+
+@keyframes referencebook-rotate {
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+@media (max-width: 700px) {
+    .referencebook-page {
+        padding: 14px;
+    }
+
+    .referencebook-hero {
+        padding: 21px;
+    }
+
+    .referencebook-hero-icon {
+        display: none;
+    }
+
+    .referencebook-stats,
+    .referencebook-form-grid,
+    .referencebook-book-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .referencebook-section {
+        padding: 17px;
+    }
+}
+.referencebook-process-btn {
+  margin-top: 12px;
+  padding: 9px 15px;
+  border: none;
+  border-radius: 8px;
+  background: #5b50d6;
+  color: white;
+  cursor: pointer;
+  font-size: 13px;
+}
+
+.referencebook-process-btn:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.referencebook-processed {
+  display: block;
+  margin-top: 10px;
+  color: #16834a;
+  font-weight: 600;
+}
+.referencebook-results {
+  margin-top: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.referencebook-results > h3 {
+  font-size: 16px;
+  color: #34345b;
+}
+
+.referencebook-results .referencebook-book-card {
+  align-items: flex-start;
+}
+
+.referencebook-results .referencebook-book-details p {
+  margin-top: 10px;
+  font-size: 13px;
+  line-height: 1.6;
+  color: #62657a;
+}
+
+.referencebook-search button {
+  border: none;
+  border-radius: 8px;
+  padding: 10px 16px;
+  background: #5b50d6;
+  color: white;
+  cursor: pointer;
+  white-space: nowrap;
+}
+
+.referencebook-search button:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+.referencebook-selection-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 15px;
+  flex-wrap: wrap;
+  margin-bottom: 15px;
+}
+
+.referencebook-selection-header p {
+  font-size: 13px;
+  color: #777;
+  margin-top: 5px;
+}
+
+.referencebook-selection-actions {
+  display: flex;
+  gap: 8px;
+}
+
+.referencebook-selection-actions button {
+  padding: 8px 13px;
+  border: 1px solid #d8d5f5;
+  border-radius: 7px;
+  background: white;
+  color: #5b50d6;
+  cursor: pointer;
+}
+
+.referencebook-page-selected {
+  border: 1px solid #7166e8 !important;
+  background: #f5f3ff !important;
+}
+
+.referencebook-selection-summary {
+  margin-top: 20px;
+  padding: 18px;
+  border-radius: 10px;
+  background: #f5f3ff;
+}
+
+.referencebook-selection-summary h3 {
+  margin-bottom: 8px;
+  color: #34345b;
+}
+
+.referencebook-selection-summary p {
+  font-size: 13px;
+  color: #666;
+  margin-bottom: 12px;
+}
+
+.referencebook-selection-summary > div {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  padding: 7px 0;
+  font-size: 13px;
+  color: #444;
+}
+
+.referencebook-selection-summary svg {
+  color: #5b50d6;
+  flex-shrink: 0;
+}
+.referencebook-generate-btn {
+  margin-top: 18px;
+  padding: 12px 20px;
+  border: none;
+  border-radius: 8px;
+  background: #5b50d6;
+  color: white;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: 0.2s ease;
+}
+
+.referencebook-generate-btn:hover {
+  background: #463bb8;
+}
+
+.referencebook-generate-btn:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}

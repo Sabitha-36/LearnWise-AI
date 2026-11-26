@@ -1,0 +1,603 @@
+
+/* ==========================================
+   LEARNWISE AI - INTERACTIVE DESIGN SYSTEM
+========================================== */
+
+:root {
+  --lw-primary: #7055d9;
+  --lw-primary-dark: #4d379f;
+  --lw-primary-light: #eeeaff;
+  --lw-accent: #a78bfa;
+  --lw-text: #28243d;
+  --lw-muted: #77758b;
+  --lw-border: #e9e5f3;
+  --lw-surface: #ffffff;
+  --lw-background: #f7f6fc;
+  --lw-shadow: 0 12px 35px rgba(57, 39, 111, 0.07);
+  --lw-shadow-hover: 0 18px 40px rgba(75, 52, 150, 0.13);
+}
+
+body {
+  background: var(--lw-background);
+  color: var(--lw-text);
+  font-family: "Inter", "Segoe UI", sans-serif;
+}
+
+.student-page-content {
+  background:
+    radial-gradient(circle at 90% 5%, rgba(167,139,250,.10), transparent 25%),
+    var(--lw-background);
+  min-height: calc(100vh - 85px);
+}
+
+/* ==========================================
+   SMOOTH PAGE ENTRANCE
+========================================== */
+
+.exam-hub-page,
+.ce-page,
+.lp-page,
+.exam-page,
+.practice-page {
+  animation: lwPageEnter .45s ease both;
+}
+
+@keyframes lwPageEnter {
+  from {
+    opacity: 0;
+    transform: translateY(12px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* ==========================================
+   HERO HEADINGS
+========================================== */
+
+.exam-hub-header,
+.ce-header,
+.lp-header {
+  position: relative;
+}
+
+.exam-hub-icon,
+.ce-heading-icon,
+.lp-heading-icon {
+  box-shadow: 0 9px 22px rgba(112,85,217,.13);
+  transition: transform .3s ease, box-shadow .3s ease;
+}
+
+.exam-hub-icon:hover,
+.ce-heading-icon:hover,
+.lp-heading-icon:hover {
+  transform: translateY(-5px) rotate(-4deg);
+  box-shadow: 0 15px 28px rgba(112,85,217,.20);
+}
+
+.exam-hub-header h1,
+.ce-header h1,
+.lp-header h1 {
+  letter-spacing: -0.8px;
+}
+
+/* ==========================================
+   EXAM PREPARATION TABS
+========================================== */
+
+.exam-hub-tabs-section {
+  position: sticky;
+  top: 95px;
+  z-index: 20;
+  box-shadow: var(--lw-shadow);
+  backdrop-filter: blur(14px);
+  background: rgba(255,255,255,.94);
+  transition: box-shadow .25s ease;
+}
+
+.exam-hub-tabs {
+  gap: 10px;
+}
+
+.exam-hub-tab {
+  position: relative;
+  overflow: hidden;
+  min-height: 60px;
+  border: 1px solid transparent;
+  transition: all .25s ease;
+}
+
+.exam-hub-tab::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    120deg,
+    transparent,
+    rgba(255,255,255,.7),
+    transparent
+  );
+  transform: translateX(-110%);
+  transition: transform .55s ease;
+}
+
+.exam-hub-tab:hover::before {
+  transform: translateX(110%);
+}
+
+.exam-hub-tab:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 7px 17px rgba(112,85,217,.12);
+}
+
+.exam-hub-tab.active {
+  background: linear-gradient(120deg, #eeeaff, #e8e3ff);
+  border-color: #d3c8ff;
+  box-shadow: inset 0 -3px 0 #7055d9;
+}
+
+.exam-hub-tab svg {
+  transition: transform .25s ease;
+}
+
+.exam-hub-tab:hover svg {
+  transform: scale(1.13);
+}
+
+.exam-hub-description {
+  min-height: 34px;
+}
+
+/* ==========================================
+   SHARED CONTENT CARDS
+========================================== */
+
+.ce-form-card,
+.ce-output-card,
+.lp-form-card,
+.lp-preview-card,
+.exam-form,
+.exam-result,
+.practice-form,
+.practice-question-card,
+.concept-history {
+  border: 1px solid var(--lw-border);
+  border-radius: 18px;
+  background: var(--lw-surface);
+  box-shadow: var(--lw-shadow);
+  transition: transform .25s ease, box-shadow .25s ease;
+}
+
+.ce-form-card:hover,
+.ce-output-card:hover,
+.lp-form-card:hover,
+.lp-preview-card:hover,
+.exam-form:hover,
+.exam-result:hover {
+  box-shadow: var(--lw-shadow-hover);
+}
+
+/* ==========================================
+   INPUTS AND TEXT AREAS
+========================================== */
+
+.ce-page input,
+.ce-page textarea,
+.ce-page select,
+.lp-page input,
+.lp-page textarea,
+.lp-page select,
+.exam-form input,
+.exam-form textarea,
+.exam-form select,
+.practice-page input,
+.practice-page textarea,
+.practice-page select {
+  transition: border-color .2s ease, box-shadow .2s ease,
+              background .2s ease;
+}
+
+.ce-page input:focus,
+.ce-page textarea:focus,
+.ce-page select:focus,
+.lp-page input:focus,
+.lp-page textarea:focus,
+.lp-page select:focus,
+.exam-form input:focus,
+.exam-form textarea:focus,
+.exam-form select:focus,
+.practice-page input:focus,
+.practice-page textarea:focus,
+.practice-page select:focus {
+  border-color: var(--lw-primary);
+  box-shadow: 0 0 0 4px rgba(112,85,217,.12);
+  outline: none;
+}
+
+/* ==========================================
+   SOURCE SELECTION CARDS
+========================================== */
+
+.ce-source-option,
+.source-option {
+  transition: all .25s ease;
+  border: 1px solid var(--lw-border);
+}
+
+.ce-source-option:hover,
+.source-option:hover {
+  transform: translateY(-4px);
+  border-color: var(--lw-accent);
+  background: #faf9ff;
+  box-shadow: 0 9px 20px rgba(112,85,217,.10);
+}
+
+.ce-source-option.selected,
+.source-option.selected {
+  background: linear-gradient(135deg, #f0edff, #e8e3ff);
+  border-color: var(--lw-primary);
+  color: var(--lw-primary-dark);
+  box-shadow: 0 5px 16px rgba(112,85,217,.12);
+}
+
+/* ==========================================
+   BUTTON INTERACTIONS
+========================================== */
+
+.lp-generate-button,
+.generate-button,
+.practice-generate-btn,
+.concept-download-btn,
+.download-button {
+  position: relative;
+  overflow: hidden;
+  transition: transform .2s ease, box-shadow .2s ease,
+              filter .2s ease;
+}
+
+.lp-generate-button:hover,
+.generate-button:hover,
+.practice-generate-btn:hover,
+.concept-download-btn:hover,
+.download-button:hover {
+  transform: translateY(-2px);
+  filter: brightness(1.06);
+  box-shadow: 0 9px 22px rgba(90,65,180,.20);
+}
+
+.lp-generate-button:active,
+.generate-button:active,
+.practice-generate-btn:active,
+.concept-download-btn:active,
+.download-button:active {
+  transform: scale(.98);
+}
+
+.lp-generate-button:disabled,
+.generate-button:disabled,
+.practice-generate-btn:disabled {
+  transform: none;
+  box-shadow: none;
+  cursor: not-allowed;
+}
+
+/* ==========================================
+   LEARNING PATH
+========================================== */
+
+.lp-hero {
+  position: relative;
+  overflow: hidden;
+  background: linear-gradient(115deg, #29205f, #6045bd, #8966e7);
+  box-shadow: 0 15px 35px rgba(66,45,139,.18);
+}
+
+.lp-hero::after {
+  content: "";
+  position: absolute;
+  width: 230px;
+  height: 230px;
+  right: 8%;
+  top: -125px;
+  border: 1px solid rgba(255,255,255,.16);
+  border-radius: 50%;
+  box-shadow:
+    0 0 0 25px rgba(255,255,255,.035),
+    0 0 0 50px rgba(255,255,255,.025);
+  pointer-events: none;
+}
+
+.lp-hero-icon {
+  position: relative;
+  z-index: 1;
+  animation: lwFloat 4s ease-in-out infinite;
+}
+
+@keyframes lwFloat {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-8px); }
+}
+
+.lp-day-card {
+  transition: transform .25s ease, border-color .25s ease,
+              box-shadow .25s ease;
+}
+
+.lp-day-card:hover {
+  transform: translateX(4px);
+  border-color: #cfc2ff;
+  box-shadow: 0 8px 22px rgba(90,65,160,.08);
+}
+
+.lp-result-summary {
+  background: linear-gradient(135deg, #f2efff, #faf8ff);
+}
+
+/* ==========================================
+   CONCEPT EXPLANATION
+========================================== */
+
+.ce-form-card,
+.ce-output-card {
+  position: relative;
+  overflow: hidden;
+}
+
+.ce-form-card::before,
+.ce-output-card::before {
+  content: "";
+  position: absolute;
+  width: 100px;
+  height: 100px;
+  right: -55px;
+  top: -55px;
+  border-radius: 50%;
+  background: rgba(167,139,250,.08);
+  pointer-events: none;
+}
+
+.ce-result-content {
+  line-height: 1.9;
+}
+
+.concept-history {
+  margin-top: 32px;
+}
+
+.saved-concept-card {
+  transition: border-color .2s ease, box-shadow .2s ease;
+}
+
+.saved-concept-card:hover {
+  border-color: #cfc2ff;
+  box-shadow: 0 8px 20px rgba(90,65,160,.08);
+}
+
+/* ==========================================
+   EVALUATE ANSWERS
+========================================== */
+
+.exam-hero {
+  position: relative;
+  overflow: hidden;
+  background: linear-gradient(115deg, #29205f, #5b43b4, #8061df);
+  box-shadow: 0 14px 32px rgba(66,45,139,.17);
+}
+
+.exam-hero-icon {
+  animation: lwFloat 4s ease-in-out infinite;
+}
+
+.mark-option,
+.pattern-option {
+  transition: all .22s ease;
+}
+
+.mark-option:hover,
+.pattern-option:hover {
+  transform: translateY(-3px);
+  border-color: var(--lw-primary);
+  box-shadow: 0 7px 17px rgba(112,85,217,.11);
+}
+
+.pattern-option.selected,
+.mark-option.selected {
+  box-shadow: 0 5px 18px rgba(112,85,217,.14);
+}
+
+/* ==========================================
+   PRACTICE QUESTIONS
+========================================== */
+
+.practice-heading {
+  padding: 25px;
+  margin-bottom: 22px;
+  border-radius: 18px;
+  background: linear-gradient(115deg, #29205f, #5b43b4, #8061df);
+  color: white;
+  box-shadow: 0 14px 32px rgba(66,45,139,.17);
+}
+
+.practice-heading h1,
+.practice-heading p {
+  color: white;
+}
+
+.practice-heading-icon {
+  border-radius: 20px;
+  background: rgba(255,255,255,.14);
+  padding: 15px;
+  animation: lwFloat 4s ease-in-out infinite;
+}
+
+.practice-feature-strip {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 13px;
+  margin-bottom: 23px;
+}
+
+.practice-feature-strip > div {
+  padding: 16px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  border: 1px solid var(--lw-border);
+  border-radius: 13px;
+  background: white;
+  color: var(--lw-primary);
+  font-size: 12px;
+  font-weight: 650;
+  transition: transform .2s ease, box-shadow .2s ease;
+}
+
+.practice-feature-strip > div:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--lw-shadow-hover);
+}
+
+.practice-form {
+  padding: 25px;
+}
+
+.practice-question-card {
+  padding: 22px;
+  margin-bottom: 16px;
+}
+
+.practice-question-card:hover {
+  border-color: #d6ccff;
+  box-shadow: var(--lw-shadow-hover);
+}
+
+.mcq-option {
+  transition: all .2s ease;
+}
+
+.mcq-option:not(:disabled):hover {
+  transform: translateX(4px);
+  border-color: var(--lw-primary);
+  background: #f7f5ff;
+}
+
+.mcq-option.selected {
+  border-color: var(--lw-primary);
+  background: #f0edff;
+}
+
+.mcq-option.correct {
+  border-color: #45a66a;
+  background: #effaf3;
+}
+
+.mcq-option.incorrect {
+  border-color: #db6666;
+  background: #fff1f0;
+}
+
+.question-feedback {
+  animation: lwPageEnter .25s ease;
+}
+
+.practice-score-card {
+  background: linear-gradient(120deg, #eeeaff, #f8f5ff);
+  border: 1px solid #ddd4ff;
+  border-radius: 16px;
+  box-shadow: var(--lw-shadow);
+}
+
+.practice-finish {
+  border-radius: 14px;
+  border: 1px solid #d9eede;
+  background: #f1faf3;
+}
+
+/* ==========================================
+   DASHBOARD CARDS
+========================================== */
+
+.stat-card,
+.quick-card {
+  transition: transform .25s ease, box-shadow .25s ease,
+              border-color .25s ease;
+}
+
+.stat-card:hover,
+.quick-card:hover {
+  transform: translateY(-5px);
+  box-shadow: var(--lw-shadow-hover);
+  border-color: #d7ceff;
+}
+
+.quick-card {
+  position: relative;
+  overflow: hidden;
+}
+
+.quick-card::after {
+  content: "";
+  position: absolute;
+  width: 100px;
+  height: 100px;
+  right: -50px;
+  bottom: -50px;
+  border-radius: 50%;
+  background: rgba(112,85,217,.06);
+  transition: transform .3s ease;
+}
+
+.quick-card:hover::after {
+  transform: scale(1.8);
+}
+
+/* ==========================================
+   ACCESSIBILITY AND RESPONSIVE
+========================================== */
+
+button:focus-visible,
+a:focus-visible {
+  outline: 3px solid #a78bfa;
+  outline-offset: 3px;
+}
+
+@media (max-width: 850px) {
+  .exam-hub-tabs-section {
+    position: static;
+  }
+
+  .practice-feature-strip {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 600px) {
+  .practice-heading {
+    padding: 20px;
+  }
+
+  .practice-feature-strip {
+    gap: 8px;
+  }
+
+  .practice-form,
+  .practice-question-card {
+    padding: 16px;
+  }
+
+  .exam-hub-tabs {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    scroll-behavior: auto !important;
+    animation-duration: .01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: .01ms !important;
+  }
+}

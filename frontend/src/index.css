@@ -1,0 +1,71 @@
+
+/* GLOBAL RESET */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* LIGHT THEME */
+:root {
+  color-scheme: light;
+
+  --app-bg: #f8f9fc;
+  --card-bg: #ffffff;
+  --text-primary: #202438;
+  --text-secondary: #70758a;
+  --border-color: #e7e9f0;
+  --input-bg: #ffffff;
+}
+
+/* DARK THEME */
+:root[data-theme="dark"] {
+  color-scheme: dark;
+
+  --app-bg: #141725;
+  --card-bg: #202538;
+  --text-primary: #f4f5fa;
+  --text-secondary: #a7aec2;
+  --border-color: #353c52;
+  --input-bg: #252c40;
+}
+
+/* BODY */
+body {
+  font-family: Arial, sans-serif;
+  background: var(--app-bg);
+  color: var(--text-primary);
+  transition: background 0.25s ease, color 0.25s ease;
+}
+
+/* FORM ELEMENTS */
+button,
+input,
+textarea,
+select {
+  font: inherit;
+}
+
+/* LEARNWISE AI SCREEN SCALING */
+#root {
+  width: 111.12%;
+  min-height: 111.12vh;
+  zoom: 0.85;
+}
+
+/* COMPACT MODE */
+.compact-mode .dashboard-card,
+.compact-mode .settings-card,
+.compact-mode .progress-card {
+  padding: 14px !important;
+}
+
+/* REDUCE MOTION */
+.reduce-motion *,
+.reduce-motion *::before,
+.reduce-motion *::after {
+  animation-duration: 0.01ms !important;
+  animation-iteration-count: 1 !important;
+  transition-duration: 0.01ms !important;
+  scroll-behavior: auto !important;
+}
